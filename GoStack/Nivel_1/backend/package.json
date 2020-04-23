@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "node": "^14.0.0",
     "uuidv4": "^6.0.7"
   },
   "devDependencies": {
