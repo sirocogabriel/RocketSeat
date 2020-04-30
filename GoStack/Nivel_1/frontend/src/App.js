@@ -1,28 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from './components/Header'
+import api from './services/api'
 
 import './App.css'
-import backgroundImage from './assets/background.jpg'
 
 function App() {
-  const [projects, setProjects] = useState([
-    'Desenvolvimento do Pagode',
-    'Mouse Assassino',
-  ])
+  const [projects, setProjects] = useState([])
+
+  useEffect(() => {
+    api.get('projects').then((response) => {
+      setProjects(response.data)
+    })
+  }, [])
 
   function handleAddProject() {
-    setProjects([...projects, `Novo Cachumba ${Date.now()}`])
+    // setProjects([...projects, `New Project ${Date.now()}`])
+    api.post('projects', {
+      title: `New Project ${Date.now()}`,
+      owner: 'Gabriel Siroco',
+    })
   }
 
   return (
     <>
-      <Header title="HomePage" />
-
-      <img width={300} src={backgroundImage} />
+      <Header title="Projects" />
 
       <ul>
         {projects.map((project) => (
-          <li key={project}>{project}</li>
+          <li key={project.id}>{project.title}</li>
         ))}
       </ul>
       <button type="button" onClick={handleAddProject}>
