@@ -19,9 +19,7 @@ function App() {
       title: `New Project ${Date.now()}`,
       owner: 'Gabriel Siroco',
     })
-
-    const project = response.data
-
+    const project = response.data.project
     setProjects([...projects, project])
   }
 
