@@ -2,6 +2,6 @@ GoStack/Nivel_1/backend/node_modules
 GoStack/Nivel_1/frontend/node_modules
 GoStack/Nivel_1/typescript/node_modules
 GoStack/Nivel_2/backend/node_modules
-GoStack/Nivel_2/desafio_1/node_modules
+GoStack/Nivel_2/desafio/node_modules
 GoStack/Nivel_2/backend/tmp/*
 !GoStack/Nivel_2/backend/tmp/.gitkeep
